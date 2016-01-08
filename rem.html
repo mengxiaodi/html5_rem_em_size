@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />  
+	<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+	
+	
+	<script>
+	var resizeFontSize=function(){
+			var windowResize=function(fun,obj,tf){
+				if(typeof(window.addEventListener)!="undefind"){
+					window.addEventListener("resize",fun,tf);
+				}else{
+					alert("不支持事件绑定!!!");	
+				}
+			},
+			getSize=function() {
+				return {
+					width :document.documentElement.clientWidth || document.body.clientWidth,
+					height :document.documentElement.clientHeight || document.body.clientHeight
+				}
+			},
+			setHtmlFontSize=function() { 
+				if(isSet){
+					if(window.innerWidth != originalWidth) {
+						originalWidth = getSize()['width'];
+						hdom.style.fontSize = originalWidth * 16 / 320 + "px"; 
+					}				
+				}else{
+					//将320设置为ue图原始大小
+					hdom.style.fontSize = getSize()['width'] * 16 / 320 + "px";
+					isSet=true;
+				}
+			},
+			hdom = document.querySelector('html'),
+			originalWidth = 320,isSet=false;
+			setHtmlFontSize();
+			var resize2=function(){
+				if(window.innerWidth != originalWidth) {
+					originalWidth = getSize()['width'];
+					hdom.style.fontSize = originalWidth * 16 / 320 + "px"; 
+				}
+			}
+			windowResize(setHtmlFontSize,window,false);
+		}
+		resizeFontSize();
+	</script>
+	<style type="text/css">
+	.box{ width:4rem; height:2rem; background:#fcc; float:left; margin:0px 0.36rem;}
+	</style>
+	<h1>rem解释</h1>
+	<div>
+	请在手机尺寸上看(谷歌模拟器)</div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<br /><br /><br /><br />
+	<div style="clear:both;">
+	
+		1，实现不同窗口，呈现的样式一样。<br />
+		2，以iphone4的宽度为基准设计页面。（认为它是最小宽度的手机尺寸，最低版本的都要兼容）<br />
+		3，用rem作单位。<br />
+		4，rem是以根元素html为基准。<br />
+		<br />
+		html的1rem等于16px
+		<br /><br />
+		换算方法：
+		html的px=当前页面宽度/iphone4的宽度*16
+	</div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />  
+		<title>rem与em测试</title>
+		
+		<style type="text/css">
+		html{  font-family:"微软雅黑";}/*  */
+		body {font-size:16px;/*1.4 × 10px = 14px */ font-family:"微软雅黑";}
+		
+		table{ border-top:1px solid #eee;border-right:1px solid #eee;}
+		td{ border-bottom:1px solid #eee;border-left:1px solid #eee;}
+		#em1{ width:2em; height:2em; font-size:50px; background:#fee; overflow:hidden;}
+		#em2{ width:1em; height:1em; background:#000;}
+		
+		#em11{ width:2em; height:2em; font-size:20px; background:#fee; overflow:hidden;}
+		#em22{ width:1em; height:1em; background:#000;}
+		
+		#box{ width:1em; height:1em; background:#000;}
+		#box2{ width:2em; height:2em; background:#000;}
+		</style>
+		
+	</head>
+	
+	<body>
+		<h1>em解释</h1>
+		请在手机尺寸上看(谷歌模拟器)
+		<table width="100%" cellpadding="10" cellspacing="0">
+			<tr>
+				<td>（fontSize:50,大框2em,小框1em）</td>
+				<td align="right">
+					<div id="em1">
+						<div id="em2"></div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>（fontSize:20,大框2em,小框1em）</td>
+				<td align="right">
+					<div id="em11"> 
+						<div id="em22"></div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>1em</td>
+				<td align="right">
+					<div id="box"></div>
+				</td>
+			</tr>
+			<tr>
+				<td>2em</td>
+				<td align="right">
+					<div id="box2"></div>
+				</td>
+			</tr>
+		</table>
+		当设置自身的fontSize的时候，以自身大小为基准。<br />
+		当没有设置自身的fontSize的时候，以父标记为准。<br />
+		如果父标记没有设置font-size，则往上推	
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+	
+		
+	</body>
+</html>
